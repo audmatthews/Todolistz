@@ -1,0 +1,247 @@
+:root {
+    --background: #1A1423;
+    --button_background: #372549;
+    --textz: #EACDC2;
+    --editcolor: #774C60;
+    --editcolortwo: #a3768b;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Monaco, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #FFF;
+    background-color: var(--background);
+}
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--textz);
+    margin-bottom: 1rem;
+}
+
+#new-task-form {
+    display: flex;
+}
+
+input,
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#new-task-input {
+    flex: 1 1 0%;
+    background-color: var(--button_background);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--textz);
+    font-size: 1.5rem;
+}
+
+#new-task-input::placeholder {
+    color: var(--editcolor);
+}
+
+#new-task-submit {
+    color: var(--editcolor);
+    font-size: 60px;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--textz), var(--textz));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#new-task-submit:hover {
+    opacity: 0.8;
+}
+
+#new-task-submit:active {
+    opacity: 0.6;
+}
+
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list {
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--textz);
+    margin-bottom: 1rem;
+}
+
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--button_background);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.task .content {
+    flex: 1 1 0%;
+}
+
+.task .content .text {
+    color: var(--textz);
+    font-size: 1.5rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+    color: var(--textz);
+}
+
+.task .actions {
+    display: flex;
+    align-items: center;
+    margin: 0 -0.5rem;
+}
+
+.task .actions input[type="checkbox"] {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--editcolor);
+    background-color: var(--textz);
+    border: 2px solid var(--editcolor);
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.task .actions input[type="checkbox"]:checked {
+    background-color: var(--editcolor);
+    border-color: var(--editcolor);
+}
+
+.task .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .actions button:hover {
+    opacity: 0.8;
+}
+
+.task .actions button:active {
+    opacity: 0.6;
+}
+
+.task .actions .edit {
+    background-image: linear-gradient(to right, var(--textz), var(--editcolor));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+    color: #da3884;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.8);
+    animation: sparkle 0.6s ease-out forwards;
+}
+
+@keyframes sparkle {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: var(--button_background);
+    border-radius: 1rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--editcolor);
+    appearance: none;
+}
+
+#progress-bar::-webkit-progress-bar {
+    background-color: var(--button_background);
+    border-radius: 1rem;
+}
+
+#progress-bar::-webkit-progress-value {
+    background-color: var(--editcolor);
+    border-radius: 1rem;
+}
+
+.progress-container {
+    width: 709px;
+    margin-top: 1rem;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 1rem;
+    background-color: var(--button_background);
+    appearance: none; 
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--button_background);
+    border-radius: 1rem;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--editcolor);
+    border-radius: 1rem;
+}
